@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<!--
+	Caminar by TEMPLATED	templated.co @templatedco	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)-->
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>HTTP - Capa de aplicación</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="assets/css/main.css">
+  </head>
+  <body> <!-- Header -->
+    <header id="header">
+      <div class="logo"><a href="#">HTTP <span>Capa de Aplicación</span></a></div>
+    </header>
+    <!-- Main -->
+    <section id="main">
+      <div class="inner">
+        <!-- One -->
+        <section id="one" class="wrapper style1">
+          <div class="image fit flush"> <img src="images/http-2034850_1920_pixabay.jpg"
+              alt=""> </div>
+          <header class="special">
+            <h2>Hypert Text Transfer Protocol HTTP</h2>
+            <p>Protocolo de la capa de aplicación</p>
+          </header>
+          <div class="content">
+            <p>HTTP es uno de los protocolos más importantes que existen debido
+              a que es el principal responsable de que puedas navegar por la
+              red. Te sonarán sus siglas, ya que en la mayoría de los
+              navegadores suele aparecer a la izquierda de la URL de la página
+              web en la que te encuentres. Como pequeño recordatorio, recuerda
+              que las páginas web son descargadas en tu navegador y el resultado
+              que tu ves es el archivo html junto con otra información adjunta a
+              la web que renderiza tu navegador.</p>
+            <p>En pocas palabras, HTTP es el responsable de que te llegue la
+              página web a tu dispositivo, es decir, que el archivo HTML y sus
+              objetos referenciados lleguen a tu navegador.La comunicación la
+              realizan un cliente y servidor, el primero enviando solicitudes, y
+              el segundo respondiendo con la información pedida o devolviendo un
+              error.</p>
+          </div>
+        </section>
+        <!-- Three -->
+        <section id="three" class="wrapper">
+          <div class="spotlight">
+            <div class="image flush"><img src="images/stateless_protocol.png" alt=""></div>
+            <div class="inner">
+              <h3>Protocolo sin estado</h3>
+              <p>HTTP no tiene estados, esto quiere decir que no guarda
+                información del contexto de la comunicación entre un servidor y
+                el cliente. Esto quiere decir que para el servidor el cliente le
+                es indiferente. Sin embargo, existen métodos para guardar una
+                cierta información del cliente, por ejemplo, mediante cookies.
+                Con ellas, el servidor puede recuperar cierta información y
+                modificar su respuesta en base a lo que estas tengan guardado.</p>
+            </div>
+          </div>
+          <div class="spotlight alt">
+            <div class="image flush"><img src="images/tcp_on_flames.bmp" alt=""></div>
+            <div class="inner">
+              <h3>Usa TCP como protocolo de transporte</h3>
+              <p>HTTP utiliza TCP como protocolo de la capa de transporte, esto
+                quiere decir que si la información llega a su destino, esta
+                llegará correctamente y completa.</p>
+            </div>
+          </div>
+          <div class="spotlight">
+            <div class="image flush"><img src="images/persisten_nonpersisten.png" alt=""></div>
+            <div class="inner">
+              <h3>Persistente VS No Persistente</h3>
+              <p>La diferencia depende principalmente de la cantidad de objetos
+                enviados en una conexión TCP.</p>
+              <h4> No Persistente</h4>
+              <p> Solo se envía un objeto por cada conexión TCP. Es decir ,
+                abres una conexión TCP, envías un objeto (pagina web, imágen de
+                la página, etc...), cierras la conexión , y así hasta que has
+                enviado todos los objetos que conforman la página web. </p>
+              <h4> Persistente</h4>
+              <p> Se envían varios objetos mediante una conexión TCP. Si tu
+                página web esta formada por 3 objetos, abres una conexión TCP,
+                envías el primero, luego el segundo, el tercero y cierras la
+                conexión. </p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer id="footer">
+      <div class="container">
+        <ul class="icons">
+          <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+          <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+          <li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+          <li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+        </ul>
+      </div>
+      <div class="copyright"> © Untitled. All rights reserved. Images <a href="https://unsplash.com">Unsplash</a>
+        Design <a href="https://templated.co">TEMPLATED</a> </div>
+    </footer>
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.poptrox.min.js"></script>
+    <script src="assets/js/skel.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

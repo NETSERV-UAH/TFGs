@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aplicación - Protocol Simulator</title>
+    <!-- BOOTSTRAP STYLES-->
+    <link href="assets/css/bootstrap.css" rel="stylesheet" />
+    <!-- FONTAWESOME STYLES-->
+    <link href="assets/css/font-awesome.css" rel="stylesheet" />
+    <!-- CUSTOM STYLES-->
+    <link href="assets/css/custom.css" rel="stylesheet" />
+    <!-- GOOGLE FONTS-->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"
+      type="text/css" />
+    <script src="assets/js/paper.js"></script>
+    <!--<script type="text/paperscript" src="scripts/sim_display_cl.js"
+canvas="paperjs-canvas"></script>-->
+  </head>
+  <body>
+    <div id="wrapper">
+      <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="adjust-nav">
+          <div class="navbar-header"> <button type="button" class="navbar-toggle"
+              data-toggle="collapse" data-target=".sidebar-collapse"> <span class="icon-bar"></span>
+              <span class="icon-bar"></span> <span class="icon-bar"></span>  </button>
+            <a class="navbar-brand" href="#">Protocol Simulator</a> </div>
+        </div>
+      </div>
+      <!-- /. NAV TOP  -->
+      <nav class="navbar-default navbar-side" role="navigation">
+        <div class="sidebar-collapse">
+          <ul class="nav" id="main-menu">
+            <li> <a id="parameters" href="#" onclick="helpDescription(this)"><i
+                  class="fa fa-sitemap "></i>Parámetros<span class="fa arrow"></span></a>
+              <ul class="nav nav-second-level">
+                <li> <input id="packet_delay" onmouseover="desc(this)" placeholder="Tiempo entre envío y llegada"
+                    class="form-control" step="100" onclick="helpDescription(this)"
+                    type="number" /> </li>
+                <li> <input id="routers_between" onmouseover="desc(this)" placeholder="Routers entre el cliente y servidor"
+                    class="form-control" onclick="helpDescription(this)" type="number" />
+                </li>
+                <li> <input id="networkMTU" onmouseover="desc(this)" placeholder="Máxima unidad de transferencia"
+                    class="form-control" step="100" onclick="helpDescription(this)"
+                    type="number" /> </li>
+              </ul>
+            </li>
+            <li> <a id="aplicationLayer" onclick="helpDescription(this)"><i class="fa fa-edit "></i>Capa
+                de Aplicación<span class="fa arrow"></span></a>
+              <ul class="nav nav-second-level">
+                <li> <a href="#" id="httpProtocol" onclick="helpDescription(this)">HTTP<span
+                      class="fa arrow"></span></a>
+                  <ul class="nav nav-third-level">
+                    <form id="httpparameters">
+                      <li> <input id="httpipserver" onmouseover="desc(this)" onclick="helpDescription(this)"
+                          placeholder="IP del Servidor" class="form-control" required="true"
+                          type="text" /> </li>
+                      <li> <input id="httpipclient" onmouseover="desc(this)" onclick="helpDescription(this)"
+                          placeholder="IP del cliente" class="form-control" required="true"
+                          type="text" /> </li>
+                      <li> <input id="httpnObjects" onmouseover="desc(this)" onclick="helpDescription(this)"
+                          placeholder="Número de objetos" class="form-control" required="true"
+                          type="number" /> </li>
+                      <li> <input id="httpRequestedObject" onclick="helpDescription(this)"
+                          onmouseover="desc(this)" placeholder="URL del objeto"
+                          class="form-control" required="true" type="text" /> </li>
+                      <li> <input id="httpRequestMessageBody" onclick="helpDescription(this)"
+                          onmouseover="desc(this)" placeholder="Mensaje de la petición"
+                          class="form-control" required="true" type="text" /> </li>
+                      <li> <input id="httpObjectSize" onmouseover="desc(this)"
+                          onclick="helpDescription(this)" placeholder="Tamaño de los objetos en bytes"
+                          class="form-control" required="true" step="100" type="number" />
+                      </li>
+                      <li>
+                        <select id="httpRequest" onclick="helpDescription(this)"
+                          onmouseover="desc(this)">
+                          <option value="GET">GET</option>
+                          <option value="POST">POST</option>
+                          <!--<option value="HEAD">HEAD</option>
+                                                  <option value="PUT">PUT</option>                                                  <option value="DELETE">DELETE</option>                                                  <option value="CONNECT">CONNECT</option>                                                  <option value="OPTIONS">OPTIONS</option>                                                  <option value="TRACE">TRACE</option>-->
+                        </select>
+                      </li>
+                      <li> <input value="Simulación HTTP" onclick="httpsubmit(); draw_simulation();"
+type="button" /> </li>
+                    </form>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li> <a href="#" id="transportLayer" onclick="helpDescription(this)"><i
+class="fa fa-sitemap "></i>Capa de Transporte<span class="fa arrow"></span></a>
+              <ul class="nav nav-second-level">
+                <li> <a href="#" id="tcpProtocol" onclick="helpDescription(this)">TCP<span
+class="fa arrow"></span></a>
+                  <ul class="nav nav-third-level">
+                    <form id="tcpparameters">
+                      <li> <input id="tcpsizeOfRequest" onmouseover="desc(this)"
+onclick="helpDescription(this)" placeholder="Tamaño de la petición del objeto" class="form-control"
+required="true" step="100" type="number" /> </li>
+                      <li> <input id="tcpsizeOfObject" onmouseover="desc(this)"
+onclick="helpDescription(this)" placeholder="Tamaño del objeto" class="form-control"
+required="true" step="100" type="number" /> </li>
+                      <li> <input id="tcpipserver" onmouseover="desc(this)" placeholder="IP del Servidor"
+onclick="helpDescription(this)" class="form-control" required="true" type="text" />
+                      </li>
+                      <li> <input id="tcpipclient" onmouseover="desc(this)" placeholder="IP del cliente"
+onclick="helpDescription(this)" class="form-control" required="true" type="text" />
+                      </li>
+                      <li> <input id="tcpportServer" onmouseover="desc(this)" placeholder="Puerto del Servidor"
+onclick="helpDescription(this)" class="form-control" required="true" value="80"
+type="number" />
+                      </li>
+                      <li> <input id="tcpportClient" onmouseover="desc(this)" placeholder="Puerto del Cliente"
+onclick="helpDescription(this)" class="form-control" required="true" step="10" type="number" />
+                      </li>
+                       <li> <input id="tcpServerInitialSequenceNumber" onmouseover="desc(this)"
+onclick="helpDescription(this)" placeholder="Número de secuencia inicial del servidor"
+class="form-control" step="100" type="number" />
+                      </li>
+                      <li> <input id="tcpClientInitialSequenceNumber" onmouseover="desc(this)"
+onclick="helpDescription(this)" placeholder="Número de secuencia inicial del cliente"
+class="form-control" step="100" type="number" />
+                      </li>
+                      <li><input id="tcpServerWindow" onmouseover="desc(this)" placeholder="Ventana del servidor"
+onclick="helpDescription(this)" class="form-control" required="true" type="number" /></li>
+                      <li><input id="tcpClientWindow" onmouseover="desc(this)" placeholder="Ventana del cliente"
+onclick="helpDescription(this)" class="form-control" required="true" type="number" /></li>
+                      <!--
+                      <li><input id="tcpAlfa" onmouseover="desc(this)" placeholder="Variable alfa del RTT Estimado"
+onclick="helpDescription(this)" class="form-control" required="true" type="text"
+hidden="" /></li>
+                      <li><input id="tcpBeta" onmouseover="desc(this)" placeholder="Variable beta de la derivación del RTT"
+onclick="helpDescription(this)" class="form-control" required="true" type="text"
+hidden="" /></li>
+											-->
+                      <li><input id="tcpServerTimeout" onmouseover="desc(this)"
+onclick="helpDescription(this)" placeholder="Timeout constante del servidor" class="form-control"
+required="true" type="number" /></li>
+                      <li><input id="tcpClientTimeout" onmouseover="desc(this)"
+onclick="helpDescription(this)" placeholder="Timeout constante del servidor" class="form-control"
+required="true" type="number" /></li>
+                      <li> <input id="tcpSlowStart" onmouseover="desc(this)" required="true"
+type="checkbox" hidden="" /> 
+                        <label style="color:white" for="tcpSlowStart" hidden="">Arranque lento</label>
+                      </li><li> <input id="tcpSimplified" onmouseover="desc(this)"
+required="true" type="checkbox" hidden="" /> 
+                        <label style="color:white" for="tcpSimplified" hidden="">Simplificado</label>
+                      </li><li> <input id="tcpPersistent" onmouseover="desc(this)"
+required="true" type="checkbox" hidden="" />
+                         <label style="color:white" for="tcpPersistent" hidden="">Persistente</label>
+                      </li>
+                      <li> <input value="Simulación TCP" onclick="tcpsubmit()" type="button" /> </li>
+                    </form>
+                  </ul>
+                </li>
+                <li> <a href="#" id="udpProtocol" onclick="helpDescription(this)">UDP<span
+class="fa arrow"></span></a>
+                  <ul class="nav nav-third-level">
+                    <form id="udpparameters">
+                      <li> <input id="udpsizeOfRequest" onmouseover="desc(this)"
+onclick="helpDescription(this)" placeholder="Tamaño de la petición del objeto" class="form-control"
+required="true" step="100" type="number" /> </li>
+                      <li> <input id="udpsizeOfObject" onmouseover="desc(this)"
+onclick="helpDescription(this)" placeholder="Tamaño del objeto" class="form-control"
+required="true" step="100" type="number" /> </li>
+                      <li> <input id="udpipserver" onmouseover="desc(this)" placeholder="IP del Servidor"
+onclick="helpDescription(this)" class="form-control" required="true" type="text" />
+                      </li>
+                      <li> <input id="udpipclient" onmouseover="desc(this)" placeholder="IP del cliente"
+onclick="helpDescription(this)" class="form-control" required="true" type="text" />
+                      </li>
+                      <li> <input id="udpportServer" onmouseover="desc(this)" placeholder="Puerto del Servidor"
+onclick="helpDescription(this)" class="form-control" required="true" type="number" />
+                      </li>
+                      <li> <input id="udpportClient" onmouseover="desc(this)" placeholder="Puerto del Cliente"
+onclick="helpDescription(this)" class="form-control" required="true" type="number" />
+                      </li>
+                      <li> <input value="Simulación UDP" onclick="udpsubmit()" type="button" /> </li>
+                    </form>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li> <a><i class="fa fa-edit "></i>Capa de Red
+              <span class="fa arrow"></span></a>
+              <ul class="nav nav-second-level">
+                <li> <a href="#" id="ipv4Protocol" onclick="helpDescription(this)">IPv4<span
+class="fa arrow"></span></a>
+                  <ul class="nav nav-third-level">
+                    <form id="ipparameters">
+                      <li> <input id="ipDestination" onmouseover="desc(this)" placeholder="IP de Destino"
+onclick="helpDescription(this)" class="form-control" required="" type="text" /> </li>
+                      <li> <input id="ipSource" onmouseover="desc(this)" placeholder="IP de Origen"
+onclick="helpDescription(this)" class="form-control" required="" type="text" /> </li>
+                      <li> <input id="ipversion" onmouseover="desc(this)" placeholder="Versión de IP"
+onclick="helpDescription(this)" calls="form-control" /></li>
+                      <li> <input id="ipTTL" onmouseover="desc(this)" placeholder="TTL"
+onclick="helpDescription(this)" calls="form-control" required="" /></li>
+                      <li> <input id="idProtocol" onmouseover="desc(this)" placeholder="Protocolo IP"
+onclick="helpDescription(this)" />
+                       </li>
+                    </form>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li> <a href="#"><i class="fa fa-sitemap "></i>Display<span class="fa arrow"></span></a>
+              <ul class="nav nav-second-level">
+                <!--
+                <li> <a  href="#" onclick="traduceTCPtoHTTP()">Convertir a capa de Aplicación<span></span></a>
+                </li>
+									-->
+                <li> <a href="#" onclick="traduceHTTPtoTCP()">Convertir a capa de Transporte<span></span></a>
+                </li>
+                <li> <a href="#" onclick="traduceTCP_UDP_IP()">Convertir a capa de Red<span></span></a>
+                </li>
+              </ul>
+            </li>
+            <li><input value="¿Autorellenar?" onclick="autoFill()" type="button" /></li>
+            <li><a href="#"><i class="fa fa-sitemap "></i>¿Ayuda?</a>
+              <style>
+                p {
+    							background-color: white;
+								}
+                </style>
+              <p id="helpParagraph">
+                ¿Necesitas ayuda con algo? ¡Pulsa en cualquier cosa! 
+                De verdad, no muerden.
+              </p>
+           	</li>
+          </ul>
+        </div>
+      </nav>
+      <!-- /. NAV SIDE  -->
+      <div id="page-wrapper">
+        <div id="page-inner">
+          <div>
+                        <div class="row">
+                    <div class="col-md-12">
+                        <h5>Información del paquete</h5>
+                      <p id="packet_info">
+                      </p>
+                    </div>
+                </div>
+            <div class="page-inner">
+              <canvas id="paperjs-canvas" class="page-inner"></canvas>
+            </div>
+					 </div>
+          <!-- /. ROW  --> </div>
+        <!-- /. PAGE INNER  --> </div>
+      <!-- /. PAGE WRAPPER  --> </div>
+    <!-- /. WRAPPER  -->
+    <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
+    <!-- JQUERY SCRIPTS -->
+    <script src="assets/js/jquery-1.10.2.js"></script>
+    <!-- BOOTSTRAP SCRIPTS -->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!-- METISMENU SCRIPTS -->
+    <script src="assets/js/jquery.metisMenu.js"></script>
+    <!-- CUSTOM SCRIPTS -->
+    <script src="assets/js/custom.js"></script>
+    <script src="scripts/logic_core_final_2.js"></script>
+    <script src="scripts/display_handler.js"></script>
+    <script type="text/paperscript" src="scripts/sim_display_cl.js" canvas="paperjs-canvas"></script>
+    <!-- PaperJS Scripts -->
+</body></html>

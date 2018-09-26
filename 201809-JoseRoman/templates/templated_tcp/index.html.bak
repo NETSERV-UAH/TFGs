@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<!--
+	Caminar by TEMPLATED	templated.co @templatedco	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)-->
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>TCP - Capa de Transporte</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="assets/css/main.css">
+  </head>
+  <body>
+    <!-- Header -->
+    <header id="header">
+      <div class="logo"><a href="#">TCP<span>Protocolo de la Capa de Transporte</span></a></div>
+    </header>
+    <!-- Main -->
+    <section id="main">
+      <div class="inner">
+        <!-- One -->
+        <section id="one" class="wrapper style1">
+          <div class="image fit flush"> <img src="images/internet_pixbay.jpg" alt="">
+          </div>
+          <header class="special">
+            <h2>Transmission Control Protocol TCP</h2>
+            <p>Protocolo de la Capa de Transporte</p>
+          </header>
+          <div class="content">
+            <p>TCP es un protocolo orientado a conexión y que cobra una gran
+              importancia debido a su papel en el protocolo HTTP. Una de las
+              razones por las que TCP es tan importante es que establece un
+              estándar para establecer comunicaciones entre dos dispositivos en
+              el que la transmisión de información se realiza sin errores.
+              Además de guardar el estado de la conexión, TCP es un protocolo
+              que mantiene un registro de que paquetes han llegado al destino
+              mediante el envío de paquetes ACK. ACK son las siglas de
+              ACKnowledgement(Reconocimiento), se puede entender como que el
+              paquete ha sido reconocido. TCP es sensible a la congestión de la
+              red y adapta su comportamiento en función de la información que
+              percibe de la red.</p>
+            <p>Por ejemplo, si un ACK no llega, se considera que el paquete
+              enviado al que le corresponde ese ACK no ha llegado. TCP en este
+              caso envía el mismo paquete y espera una mayor cantidad de tiempo.
+              La espera aumenta conforme los paquetes se van perdiendo. Recordad
+              que los paquetes se pierden normalmente cuando encuentran un
+              router congestionado, es decir, un router que no puede encolar el
+              paquete. Un router congestionado delata una red congestionada. El
+              intervalo de tiempo en el que TCP se queda esperando se llama
+              ventana y continua aumentando conforme paquetes sin ACKs van
+              siendo recibidos.</p>
+          </div>
+        </section>
+        <!-- Three -->
+        <section id="three" class="wrapper">
+          <div class="spotlight">
+            <div class="image flush"><img src="images/796px-Tcp_state_diagram_fixed_CC3-0%20Wikimedia.png"
+                alt=""></div>
+            <div class="inner">
+              <h3>Protocolo orientado a conexión</h3>
+              <p>Cuando se dice que TCP es un protocolo orientado a conexión lo
+                que se quiere decir es que, establece, mantiene y termina una
+                conexión mientras que queden datos por enviar o recibir.</p>
+              <p> Esto también implica que TCP pasa por una serie de estados
+                bien definidos durante esta conexión, existen una serie de
+                salidas a una serie de entradas ( o paquetes ). </p>
+              <p> Las conexiones TCP funcionan de la siguiente manera:<br>
+                El cliente, que quiere establecer una conexión con el servidor,
+                envia un paquete con la flag ( identificadores con diferentes
+                significados ) SYN activada. El servidor, envía devuelta un
+                paquete con las flag SYN y ACK activadas (Este paquete suele ser
+                conocido como SYN-ACK), en resumen, el servidor comunica al
+                cliente que ha recibido la petición de conexión y que va a
+                iniciar una conexión. El cliente responde con un ACK al
+                servidor&nbsp; y comienza la comunicación de datos. Una vez que
+                termina la transmisión de datos el cliente envia un paquete con
+                la flag FIN activada, lo que significa que quiere terminar la
+                conexión. El servidor envía un ACK al cliente y pasado un
+                tiempo, un paquete con la flag FIN activada y espera un ACK por
+                parte del cliente, dando por terminada la conexión. </p>
+            </div>
+          </div>
+          <div class="spotlight alt">
+            <div class="image flush"><img src="images/arm-2029406_1280.png" alt=""></div>
+            <div class="inner">
+              <h3>Utilidades de TCP</h3>
+              <p>Cuando decía que TCP es uno de los protocolos más importantes
+                de la historia junto con IP, no bromeaba. Entre sus utilidades
+                están HTTP, el protocolo responsable de que puedas ver las
+                páginas web, FTP (transferencia de archivos), SMTP (antes de que
+                existiera Outlook tal y como lo conocemos ahora, IMAP,
+                Exchange..., existía POP3 y SMTP que eran los responsables de
+                recibir y enviar correos electrónicos, ya te puedes hacer a la
+                idea de porque es tan importante) y SNMP (Simple Network
+                Management Protocol).</p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer id="footer">
+      <div class="container">
+        <ul class="icons">
+          <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+          <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+          <li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+          <li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+        </ul>
+      </div>
+      <div class="copyright"> © Untitled. All rights reserved. Images <a href="https://unsplash.com">Unsplash</a>
+        Design <a href="https://templated.co">TEMPLATED</a> </div>
+    </footer>
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.poptrox.min.js"></script>
+    <script src="assets/js/skel.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

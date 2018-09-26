@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<!--
+	Caminar by TEMPLATED	templated.co @templatedco	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)-->
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>UDP - Capa de transporte</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="assets/css/main.css">
+  </head>
+  <body> <!-- Header -->
+    <header id="header">
+      <div class="logo"><a href="#">UDP <span>Protocolo de la Capa de
+            Transporte</span></a></div>
+    </header>
+    <!-- Main -->
+    <section id="main">
+      <div class="inner">
+        <!-- One -->
+        <section id="one" class="wrapper style1">
+          <div class="image fit flush"> <img src="images/internet_pixbay.jpg" alt="">
+          </div>
+          <header class="special">
+            <h2>User Datagram Protocol UDP</h2>
+            <p>Protocolo de la capa de transporte</p>
+          </header>
+          <div class="content">
+            <p>UDP se diferencia de su hermano TCP principalmente por ser un
+              protocolo no orientado a la conexión. Esto quiere decir que no hay
+              un establecimiento de conexión previo a la transferencia de datos.
+              Por otra parte, UDP es un protocolo de tipo Best Effort, esto
+              quiere decir que hace su mejor esfuerzo en llegar al receptor,
+              pero no asegura que el dato acabe siendo recibido por el receptor.
+              Por otra, parte UDP no tiene repetición de paquetes, es decir, si
+              se pierde un paquete, no se retransmite.</p>
+            <p>Llegados a este punto, alguien podría preguntarse porque usar UDP
+              en vez de TCP. UDP tiene muchas desventajas con respecto a TCP en
+              cuanto a la integridad de los datos, pero es un protocolo mucho
+              más ligero que TCP. Es decir, una progresiva perdida de paquetes
+              en TCP lleva a que se aumente el retardo en que TCP envía los
+              datos, debido a que este espera a las confirmaciones o piensa que
+              hay congestión en la red. SIn embargo, UDP no tiene en cuenta esos
+              factores, divide el dato que tiene que enviar y lo envía.</p>
+          </div>
+        </section>
+        <!-- Three -->
+        <section id="three" class="wrapper">
+          <div class="spotlight">
+            <div class="image flush"><img src="images/udp_interview.bmp" alt=""></div>
+            <div class="inner">
+              <h3>Protocolo sin conexión ¿Por qué lo ibamos a utilizar?</h3>
+              <p>TCP se usa para enviar información que no quieres que se
+                pierda(a MUY grandes rasgos). TCP te garantiza que, o llega el
+                dato que quieres o no llega, pero en ningún momento puede llegar
+                incompleto o con errores. UDP no te garantiza nada de eso, pero
+                debido a que envía los paquetes sin más, elimina el retardo de
+                confirmación de TCP y lo vuelve un protocolo mucho más rápido.
+                Por ejemplo, supón que tienes que enviar un video a través de
+                internet en streaming. Cada imagen está compuesta de cientos de
+                pixeles, si esperars a que llegaran cada uno de ellos, es muy
+                posible que de los más de mil pixeles, alguno se pierda, lo cual
+                añade un retardo. Según algunos estudios un retardo por encima
+                de los 0.3 segundos nos resulta desagradable, si el retardo se
+                fuera concatenando, llegaría un momento que ver un vídeo por
+                internet sería un incordio. En el caso de UDP no existe ese
+                retardo, pero pueden ocurrir esos errores, la solución es
+                enmascarar esos errores con el códec de vídeo.</p>
+            </div>
+          </div>
+          <div class="spotlight alt">
+            <div class="image flush"><img src="images/video-3410270_1920.jpg" alt=""></div>
+            <div class="inner">
+              <h3>Peculiaridades y aplicaciones de UDP</h3>
+              <p>Entre las características de UDP podemos encontrar que </p>
+              <li>No utiliza paquetes sino que utiliza datagramas</li>
+              <li>No tiene guarda un estado de la conexión.</li>
+              <li>Es útil para construir otros protocolos por encima.</li>
+              <li>Muy adecuado para tareas de Streaming de vídeo y música</li>
+              <p></p>
+              <p> Puede parecer que UDP no se utiliza tanto como TCP (y hasta
+                cierto punto tendríais razón) pero eso no quita que protocolos
+                muy importantes funcionen sobre UDP. Por ejemplo, el protocolo
+                DNS se ha implementado sobre UDP, otro ejemplo sería el
+                protocolo DHCP, mediante el cual una máquina recibe una
+                dirección IP al conectarse a una red. </p>
+            </div>
+          </div>
+          <!----
+          <div class="spotlight">            <div class="image flush"><img src="images/pic08.jpg" alt=""></div>            <div class="inner">              <h3>Morbi Eleifend</h3>
+              <p>Curabitur eget semper ante. Morbi eleifend ultricies est, a                blandit diam vehicula vel. Vestibulum porttitor nisi quis                viverra hendrerit. Suspendisse vel volutpat nibh, vel elementum                lacus. Maecenas commodo pulvinar dui, at cursus metus imperdiet
+                vel.</p>            </div>          </div>        </section>
+      </div>    </section>    <!-- Footer -->
+          <footer id="footer">
+            <div class="container">
+              <ul class="icons">
+                <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+                <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+                <li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+                <li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+              </ul>
+            </div>
+            <div class="copyright"> © Untitled. All rights reserved. Images <a
+                href="https://unsplash.com">Unsplash</a> Design <a href="https://templated.co">TEMPLATED</a>
+            </div>
+          </footer>
+          <!-- Scripts -->
+          <script src="assets/js/jquery.min.js"></script>
+          <script src="assets/js/jquery.poptrox.min.js"></script>
+          <script src="assets/js/skel.min.js"></script>
+          <script src="assets/js/util.js"></script>
+          <script src="assets/js/main.js"></script> </section>
+      </div>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<!--
+	Caminar by TEMPLATED	templated.co @templatedco	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)-->
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>IPv4 - Capa de Red</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="assets/css/main.css">
+  </head>
+  <body>
+    <!-- Header -->
+    <header id="header">
+      <div class="logo"><a href="#">IPv4 <span>Protocolo de la Capa de Red</span></a></div>
+    </header>
+    <!-- Main -->
+    <section id="main">
+      <div class="inner">
+        <!-- One -->
+        <section id="one" class="wrapper style1">
+          <div class="image fit flush"> <img src="images/darknet-3588402_1920.jpg"
+              alt=""> </div>
+          <header class="special">
+            <h2>Internet Protocol version 4 IPv4</h2>
+            <p>Protocolo de la capa de RED</p>
+          </header>
+          <div class="content">
+            <p>El protocolo IP es uno de los protocolos más famosos que existe.
+              Internet es una puerta al mundo y un recurso que la mayoría de las
+              personas utiliza de forma diaria, y el responsable de que se
+              transmita la información es, en gran medida, gracias a este
+              protocolo.</p>
+            <p>Si bien es cierto que este protocolo no se ve en "Arquitectura de
+              Redes" sino, en la asignatura de "Redes de Computadores", es
+              interesante añadirlo para ver como se tranducen las conexiones TCP
+              y UDP a IP.</p>
+          </div>
+        </section>
+        <!-- Three -->
+        <section id="three" class="wrapper">
+          <div class="spotlight">
+            <div class="image flush"><img src="images/UDP_encapsulation.svg" alt=""><a
+                href="https://upload.wikimedia.org/wikipedia/commons/3/3b/UDP_encapsulation.svg">
+                Imagen original</a></div>
+            <div class="inner">
+              <h3>Best-Effort Protocol</h3>
+              <p>Una de las características más llamativas de IP es que no
+                garantiza que la información que envías llegue a su destino. El
+                camino que tiene que realizar el datagrama IP desde el origen
+                hasta el destino puede estar, congestionado, cortado,
+                estropeado, encerrado en un bucle, etc... Un protocolo
+                "Best-Effort" hace el "mayor esfuerzo" posible para que el
+                datagrama llegue al destino, pero no lo garantiza. Por eso,
+                protocolos de capas superiores como TCP tienen mecanismos de
+                recuperación frente a errores, porque como en este caso, algunas
+                veces los protocolos de capas inferiores no los implementan.</p>
+            </div>
+          </div>
+          <div class="spotlight alt">
+            <div class="image flush"><img src="images/Ipv6_address.svg" alt=""><a
+                href="https://upload.wikimedia.org/wikipedia/commons/1/15/Ipv6_address.svg">
+                Imagen original</a></div>
+            <div class="inner">
+              <h3>La dirección IPv4</h3>
+              <p>La dirección IP es un dato de 32bits, es decir, 4 bytes, el
+                cual permite el uso de 4294967296 direcciones. Aunque parezcan
+                muchas direcciones, lo cierto es que se están acabando, por ello
+                se creó el protocolo IPv6, cuyas direcciones tienen 128 bits, es
+                decir, es como 4 direcciones IP juntas. </p>
+            </div>
+          </div>
+          <div class="spotlight">
+            <div class="image flush"><img src="images/image_ttl.png" alt=""></div>
+            <div class="inner">
+              <h3>Características de las direcciones IP</h3>
+              <li>
+                <h4> Rangos de direcciones IP </h4>
+                <p> No todas las direcciones IP son válidas o se pueden
+                  utilizar. Hay rangos de IPs que utiliza el propio sistema
+                  operativo y existen otras direcciones que están reservadas.
+                  Las direcciones válidas se agrupan en 3 clases A,B y C. Estas
+                  clases se identifican por los bits iniciales de la dirección y
+                  por el tamaño de la red que representan. Este concepto se
+                  estudia con más detenimiento en la asignatura Redes de
+                  Computadores. </p>
+              </li>
+              <li>
+                <h4> Fragmentación y reensamblado </h4>
+                <p> No todos los caminos entre routers son iguales. La Unidad
+                  Máxima de Transferencia(MTU), determina la cantidad de datos
+                  que se pueden transmitir por la red y por lo tanto, condiciona
+                  el tamaño de los datagramas IP. Cuando un datagrama se
+                  encuentra en un router y la MTU es menor que el tamaño del
+                  paquete, el paquete se fragmenta y se envía, junto con un
+                  identificador que determina el orden en el que los paquetes
+                  deben ser reensamblados. </p>
+              </li>
+              <li>
+                <h4> TTL o Tiempo de Vida(Time To Live) </h4>
+                <p> En la red se pueden crear bucles debido a errores, fallos en
+                  la configuración e incluso, ataques. Si se crea un bucle, el
+                  datagrama se queda encerrado en el bucle viajando entre los
+                  mismos routers. Esto lleva a la congestión de la red y a la
+                  consecuente perdida de información. Para evitar esto, los
+                  paquetes IP tienen un contador llamado TTL. Este contador se
+                  decrementa en cada salto que realiza en la red, es decir, por
+                  cada router que pasa. Si el TTL llega a 0, el paquete es
+                  descartado. </p>
+              </li>
+            </div>
+          </div>
+          <div class="spotlight alt">
+            <div class="image flush"><img src="images/Full_Cone_NAT.svg" alt=""><a href="https://upload.wikimedia.org/wikipedia/commons/4/44/Full_Cone_NAT.svg">   Imagen Original</a></div>
+            <div class="inner">
+              <h3>¿Cómo se consiguen las direcciones IP?</h3>
+              <li>
+                <h4>DHCP Dynamic Host Configuration Protocol</h4>
+                <p> Cuando un nuevo equipo se conecta a cualquier red, lo
+                  primero que hace es buscar el servidor DHCP para que este le
+                  asigne una dirección IP. Los routers domésticos tienen
+                  servidores DHCP los cuales asignan las direcciones en la red
+                  interna doméstica, en entornos empresariales, estos servidores
+                  DHCP se instalan en servidores Windows o Linux. </p>
+              </li>
+              <li>
+                <h4> NAT Network Address Translation </h4>
+                <p> Para evitar un sobreuso de direcciones IP, lo que se utiliza
+                  actualmente es el protocolo NAT. Como ejemplo de utilización
+                  de NAT, tenemos la distribución de direcciones IP en nuestras
+                  redes domésticas. La dirección IP de nuestros equipos nos la
+                  proporciona el router. De cara a Internet, el router solo
+                  tiene una sola IP, pero el tráfico sale por diferentes
+                  puertos. Cada uno de esos puertos por los que sale y entra
+                  información en nuestro router, es un flujo de datos que va y
+                  viene a cada uno de nuestros dispositivos. El router tiene una
+                  tabla de traducción que le dice, en base al puerto al que
+                  llega la información, a que dispositivo le corresponde. </p>
+              </li>
+            </div>
+          </div>
+          <!----
+          <div class="spotlight">            <div class="image flush"><img src="images/pic08.jpg" alt=""></div>            <div class="inner">              <h3>Morbi Eleifend</h3>              <p>Curabitur eget semper ante. Morbi eleifend ultricies est, a                blandit diam vehicula vel. Vestibulum porttitor nisi quis                viverra hendrerit. Suspendisse vel volutpat nibh, vel elementum                lacus. Maecenas commodo pulvinar dui, at cursus metus imperdiet                vel.</p>            </div>          </div>        </section>      </div>    </section>    <!-- Footer -->
+          <footer id="footer">
+            <div class="container">
+              <ul class="icons">
+                <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+                <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+                <li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+                <li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+              </ul>
+            </div>
+            <div class="copyright"> © Untitled. All rights reserved. Images <a
+                href="https://unsplash.com">Unsplash</a> Design <a href="https://templated.co">TEMPLATED</a>
+            </div>
+          </footer>
+          <!-- Scripts -->
+          <script src="assets/js/jquery.min.js"></script>
+          <script src="assets/js/jquery.poptrox.min.js"></script>
+          <script src="assets/js/skel.min.js"></script>
+          <script src="assets/js/util.js"></script>
+          <script src="assets/js/main.js"></script> </section>
+      </div>
+    </section>
+    
+  </body>
+</html>

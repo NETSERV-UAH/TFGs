@@ -1,5 +1,10 @@
 # TFGs
 
+## :star: Curso 2021/2022
+### Paula Bartolomé Mora :thought_balloon:
+**TFG - Implementación de algoritmos distribuidos en Smart Grids mediante el uso de tecnología Raspberry**:
+[`https://github.com/PaulaBartolomeMora/Dedenne-Protocol`](https://github.com/PaulaBartolomeMora/Dedenne-Protocol)
+
 ## :star: Curso 2019/2020
 ### David Carrascal Acebron :thought_balloon:
 **TFG - Design and study of integrated IoT devices in SDN environments**:
